@@ -3,8 +3,6 @@
 # unique email addresses. The delimiters to support are commas (',')
 # or whitespace (' ').
 
-require pry
-
 class EmailAddressParser
   attr_accessor :email_addresses
   
@@ -13,10 +11,9 @@ class EmailAddressParser
   end
   
   def parse
-    pry
-    if @email_addresses.count(" ") > 1
+    if @email_addresses.include(" ")
       @email_addresses.split(" ")
-    else @email_addresses.count(",") > 1
+    else @email_addresses.include(",")
       @email_addresses.split(",")
     end
     @email_addresses = @email_addresses.uniq
