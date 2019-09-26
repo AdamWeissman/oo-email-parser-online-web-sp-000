@@ -5,26 +5,13 @@
 
 class EmailAddressParser
   attr_accessor :email_addresses
-  
+
   def initialize(email_addresses)
     @email_addresses = email_addresses.strip
   end
-  
+
   def parse
-    if @email_addresses.include?(",")
-      @email_addresses = @email_addresses.gsub(/\s+/, "")
-      @email_addresses = @email_addresses.split(",")
-   #else
-      
-   #   @email_addresses = @email_addresses.split(",")
-   # end
-=begin
-      @email_addresses.split(" ")
-    else @email_addresses.include(",")
-      @email_addresses.split(",")
-    end
-    @email_addresses = @email_addresses.uniq
-=end
+      @email_addresses = @email_addresses.split(/[\s,]+/)
+      @email_addresses.uniq
   end
-  
 end
