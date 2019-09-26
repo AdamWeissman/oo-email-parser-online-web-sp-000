@@ -11,6 +11,8 @@ class EmailAddressParser
   end
   
   def parse
+    case @email_addresses
+    when @
     @email_addresses.split(" ") if (@email_addresses.count(" ") > 1)
   
   
