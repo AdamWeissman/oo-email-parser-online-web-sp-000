@@ -11,9 +11,11 @@ class EmailAddressParser
   end
   
   def parse
-    case @email_addresses
-    when @
-    @email_addresses.split(" ") if (@email_addresses.count(" ") > 1)
+    if @email_addresses.count(" ") > 1
+      @email_addresses.split(" ")
+    else @email_addresses.count(",") > 1
+      @email_addresses.split(",")
+    end
   
   
 end
