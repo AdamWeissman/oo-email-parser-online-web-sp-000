@@ -11,12 +11,14 @@ class EmailAddressParser
   end
   
   def parse
-    if @email_addresses.include(" ")
+    @email_addresses.split(",")
+=begin
       @email_addresses.split(" ")
     else @email_addresses.include(",")
       @email_addresses.split(",")
     end
     @email_addresses = @email_addresses.uniq
+=end
   end
   
 end
