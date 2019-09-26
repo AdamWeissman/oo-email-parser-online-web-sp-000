@@ -16,6 +16,7 @@ class EmailAddressParser
     else @email_addresses.count(",") > 1
       @email_addresses.split(",")
     end
+    @email_addresses.uniq!
   
   
 end
