@@ -12,7 +12,7 @@ class EmailAddressParser
   
   def parse
     @email_addresses = @email_addresses.split(",")
-    @email_addresses.each {|x| x.gsub(/\s+/, "")}
+    @email_addresses.map {|x| x.gsub(/\s+/, "")}
 =begin
       @email_addresses.split(" ")
     else @email_addresses.include(",")
