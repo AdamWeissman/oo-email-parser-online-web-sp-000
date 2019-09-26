@@ -11,7 +11,7 @@ class EmailAddressParser
   end
   
   def parse
-    @email_addresses.split(",").gsub(/\s+/, "")
+    @email_addresses.split(",").collect {|x| x.gsub(/\s+/, "")}
 =begin
       @email_addresses.split(" ")
     else @email_addresses.include(",")
